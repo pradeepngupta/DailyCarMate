@@ -1,0 +1,7 @@
+Java SE 8u121 - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+Tomcat 8.0.41 - http://tomcat.apache.org/download-80.cgi#8.0.41
+Eclipse Neon2 - http://www.eclipse.org/downloads/
+Apache Maven 3.3.9 - http://maven.apache.org/
+MySQL 5.7.17 - https://dev.mysql.com/downloads/installer/
+Angular JS 2.4  - http://angularjs.blogspot.in/2016/12/angular-240-now-available.html https://angular.io/
+Bootstrap CSS v3.3.7   - http://getbootstrap.com/getting-started/
