@@ -1,0 +1,27 @@
+Objects
+- User
+	id:	integer
+	username: string
+	email: string
+	firstname: string
+	lastname: string
+	gender: enum[male/female]
+	mobile: string
+	mobile_verified: boolean
+	userrole: int {UserRole::id}
+	status: enum[Active/InActive/Blocked]
+	created: timestamp
+	updated: timestamp
+	
+- UserRole
+	id: integer
+	name: string
+	created: timestamp
+	updated: timestamp
+
+- Ride
+	id: integer
+	source: string
+	destination: string
+	created: timestamp
+	updated: timestamp
