@@ -37,7 +37,7 @@
          UserDatabaseRealm to authenticate users
     -->
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
-    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" initialSize="5" logAbandoned="true" maxActive="20" maxIdle="10" maxWait="-1" minEvictableIdleTimeMillis="60000000" name="jdbc/DevDB" password="root" poolPreparedStatements="true" removeAbandoned="true" removeAbandonedTimeout="90" testWhileIdle="true" timeBetweenEvictionRunsMillis="600000" type="javax.sql.DataSource" url="jdbc:mysql://127.0.0.1:3306/dcmdevdb?autoReconnect=true" username="root" validationInterval="300000" validationQuery="select 1"/>
+<!--     <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" initialSize="5" logAbandoned="true" maxActive="20" maxIdle="10" maxWait="-1" minEvictableIdleTimeMillis="60000000" name="jdbc/DevDB" password="root" poolPreparedStatements="true" removeAbandoned="true" removeAbandonedTimeout="90" testWhileIdle="true" timeBetweenEvictionRunsMillis="600000" type="javax.sql.DataSource" url="jdbc:mysql://127.0.0.1:3306/dcmdevdb?autoReconnect=true" username="root" validationInterval="300000" validationQuery="select 1"/> -->
     
   </GlobalNamingResources>
 
@@ -126,9 +126,9 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-		<Context docBase="DCMWebMoule" path="/dailyCarMate" reloadable="true" source="org.eclipse.jst.jee.server:DCMWebModule"/>
-		<Context docBase="DCMWebMoule" path="/admin" reloadable="true" source="org.eclipse.jst.jee.server:DCMAdminModule"/>
-      </Host>
+		
+		
+      <Context docBase="DCMWebModule" path="/DCMWebModule" reloadable="true" source="org.eclipse.jst.jee.server:DCMWebModule"/><Context docBase="DCMAdminModule" path="/DCMAdminModule" reloadable="true" source="org.eclipse.jst.jee.server:DCMAdminModule"/></Host>
     </Engine>
   </Service>
 </Server>

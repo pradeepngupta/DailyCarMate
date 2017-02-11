@@ -21,4 +21,18 @@
 	<module>DCMWebModule</module>
 	<module>DCMAdminModule</module>
   </modules>
+  
+  <properties>
+  	<!-- Dependencies version -->
+  	<spring-core-version>4.3.6.RELEASE</spring-core-version>
+  	<spring-security-version>4.2.1.RELEASE</spring-security-version>
+  	<slf4j-version>1.7.22</slf4j-version>
+  	
+  	<!-- Maven plugins version -->  	
+  	<maven-copiler-version>3.3</maven-copiler-version>
+  	<maven-war-plugin>3.0.0</maven-war-plugin>
+  	
+  	<!-- JDK Version -->
+  	<jdk-version>1.8</jdk-version>
+  </properties>
 </project>
