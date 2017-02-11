@@ -1,38 +1,128 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.dailycarmate</groupId>
-  <artifactId>dailycarmate</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  
-  <modules>
-	<module>DCMBaseComponents</module>
-	<module>DCMModelBean</module>
-	<module>DCMCommonUtils</module>
-	<module>DCMDataRepository</module>
-	<module>EmailService</module>
-	<module>SmsService</module>
-	<module>NotificationService</module>
-	<module>AuthenticationService</module>
-	<module>AccountService</module>
-	<module>RideService</module>
-	<module>RideMatchingService</module>
-	<module>PaymentService</module>
-	<module>DCMWebModule</module>
-	<module>DCMAdminModule</module>
-  </modules>
-  
-  <properties>
-  	<!-- Dependencies version -->
-  	<spring-core-version>4.3.6.RELEASE</spring-core-version>
-  	<spring-security-version>4.2.1.RELEASE</spring-security-version>
-  	<slf4j-version>1.7.22</slf4j-version>
-  	
-  	<!-- Maven plugins version -->  	
-  	<maven-copiler-version>3.3</maven-copiler-version>
-  	<maven-war-plugin>3.0.0</maven-war-plugin>
-  	
-  	<!-- JDK Version -->
-  	<jdk-version>1.8</jdk-version>
-  </properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.dailycarmate</groupId>
+	<artifactId>dailycarmate</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>DCMBaseComponents</module>
+		<module>DCMModelBean</module>
+		<module>DCMCommonUtils</module>
+		<module>DCMDataRepository</module>
+		<module>EmailService</module>
+		<module>SmsService</module>
+		<module>NotificationService</module>
+		<module>AuthenticationService</module>
+		<module>AccountService</module>
+		<module>RideService</module>
+		<module>RideMatchingService</module>
+		<module>PaymentService</module>
+		<module>DCMWebModule</module>
+		<module>DCMAdminModule</module>
+	</modules>
+
+	<properties>
+		<!-- Dependencies version -->
+		<spring.version>4.3.6.RELEASE</spring.version>
+		<spring.security.version>4.2.1.RELEASE</spring.security.version>
+		<aspectj.version>1.8.10</aspectj.version>
+		<org.slf4j.version>1.7.12</org.slf4j.version>
+		<junit.version>4.12</junit.version>
+
+		<!-- Maven plugins version -->
+		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
+		<maven.war.plugin.version>3.0.0</maven.war.plugin.version>
+
+		<!-- JDK Version -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+	</properties>
+	<dependencyManagement>
+		<!-- Spring dependencies -->
+		<dependencies>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${spring.security.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${org.slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${org.slf4j.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/junit/junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
